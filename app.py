@@ -12,12 +12,12 @@ app = Flask(__name__)
 def index():
     cpu_percent = psutil.cpu_percent()
     mem_percent = psutil.virtual_memory().percent
-    Message = "Live System Information"
+    Message = "Live System Information:"
     if cpu_percent > 80: 
-        Message = "HIGH CPU UTILIZATION DETECTED. PLEASE SCALE UP"
+        Message = "HIGH CPU UTILISATION DETECTED. PLEASE SCALE UP."
     if mem_percent > 80:
-        Message = "HIGH MEMORY UTILIZATION DETECTED. PLEASE SCALE UP"
-    return f"{Message}: CPU Utilization: {cpu_percent} and Memory Utilization: {mem_percent}"
+        Message = "HIGH MEMORY UTILISATION DETECTED. PLEASE SCALE UP."
+    return f"{Message} CPU Utilisation: {cpu_percent} and Memory Utilisation: {mem_percent}"
 
 # run app on local machine
 if __name__ == '__main__':
